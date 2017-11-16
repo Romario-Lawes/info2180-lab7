@@ -7,12 +7,12 @@ $dbname = 'world';
 
 $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
 
-$query = htmlentities($_GET["q"]);
+$country = htmlentities($_GET["country"]);
 
-if ($query === "all=true") {
+if (htmlentities($_GET["all"]) === "true") {
   $stmt = $conn->query("SELECT * FROM countries");
 } else {
-  $stmt = $conn->query("SELECT * FROM countries WHERE name = '$query'");
+  $stmt = $conn->query("SELECT * FROM countries WHERE name = '$country'");
 }
 
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);

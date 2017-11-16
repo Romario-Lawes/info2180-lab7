@@ -12,9 +12,9 @@ window.onload = function() {
         }
       };
       if (document.getElementById("all").checked) {
-        xhr.open("GET", "world.php?q=all=true", true);
+        xhr.open("GET", "world.php?all=true", true);
       } else {
-        xhr.open("GET", "world.php?q=" + document.getElementById("country").value, true);
+        xhr.open("GET", "world.php?country=" + document.getElementById("country").value, true);
       }
       xhr.send();
     });
